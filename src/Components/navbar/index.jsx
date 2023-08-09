@@ -83,7 +83,7 @@ const Navbar = ()=> {
                 </li>
                 <li>
                      <NavLink
-                            to="/my-orders"
+                            to="/orders"
                             className={({ isActive }) =>
                             isActive ? textDecoration : ""
                          }
@@ -110,7 +110,7 @@ const Navbar = ()=> {
                 </li>
                 <li>
                      <NavLink
-                            to="/cart"
+                            to="/my-order"
                             >
                         🛒
                     </NavLink>
