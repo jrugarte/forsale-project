@@ -16,15 +16,13 @@ function Home() {
         <Layout>
             Home
             <div className="absolute grid grid-flow-col grid-rows-3 gap-4 pr-10 top-20 left-10">
-
             {
-               items?.map(item=>(
+                items?.map(item=>(
                 <Card key={item.id} data={item}/> 
                )) 
-
             }
             </div>
-            <ProductDetail value="null"/>
+            <ProductDetail />
         </Layout>
      )
   }
