@@ -1,11 +1,16 @@
-const Card = (data)=> {
-    return (
+import {useContext} from "react"
+import {ShoppingCartContext} from "../../Context"
 
-    <div className="bg-white cursor-pointer w-56 h-60">
-        <figure className="relative mb-2 w-full h-4/5">
-            <span className="absolute bottom-0 left-0 rounded-md pl-1 pr-1 text-black/60 bg-white/30 ml-2 mb-2">{data.data.category.name}</span>
-            <img src={data.data.images[0]} alt="" className="w-full h-full object-cover rounded-lg"/>
-            <div className="absolute top-0 right-0 flex justify-center items-center text-black/40 bg-white/30 w-6 h-6 rounded-full mt-2 mr-2">
+const Card = (data)=> {
+const context = useContext(ShoppingCartContext)
+
+    return (
+    <div className="w-56 bg-white cursor-pointer h-60">
+        <figure className="relative w-full mb-2 h-4/5">
+            <span className="absolute bottom-0 left-0 pl-1 pr-1 mb-2 ml-2 rounded-md text-black/60 bg-white/30">{data.data.category.name}</span>
+            <img src={data.data.images[0]} alt="" className="object-cover w-full h-full rounded-lg"/>
+            <div className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 mt-2 mr-2 rounded-full text-black/40 bg-white/30" 
+            onClick={() => context.setCount(context.count +1)}>
                 +
             </div>
         </figure>
