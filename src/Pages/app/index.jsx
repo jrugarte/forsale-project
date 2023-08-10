@@ -6,6 +6,7 @@ import NotFound from '../NotFound/notfound'
 import Orders from '../Orders'
 import SignIn from '../SignIn/signin'
 import Navbar from '../../Components/navbar'
+import ProductDetail from '../../Components/ProductDetail'
 import { ShoppingCartProvider } from '../../Context'
 
 const AppRoutes = () =>{
@@ -15,6 +16,7 @@ const AppRoutes = () =>{
     {path: '/*', element: <NotFound/>},
     {path: '/orders', element: <Orders/>},
     {path: '/sign-in', element: <SignIn/>},
+    {path: '/product-detail', element: <ProductDetail/>},
   ])
   return routes
 }
