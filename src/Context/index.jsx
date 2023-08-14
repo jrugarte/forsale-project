@@ -16,7 +16,7 @@ export const ShoppingCartProvider = ({children})=>{
         description: "",
         images: [],
       });
-    const [cartProducts, setCartProducts] = useState({})
+    const [cartProducts, setCartProducts] = useState([])
 
 
     return (

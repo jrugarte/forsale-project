@@ -4,6 +4,12 @@ import {ShoppingCartContext} from "../../Context"
 
 const ProductDetail = ()=> {
     const context = useContext(ShoppingCartContext)
+    
+    const addProductsToCart = (productData) =>{
+      context.setCount(context.count +1)
+      context.setCartProducts([...context.cartProducts, productData])
+      console.log('CART:', context.cartProducts);
+  }
   console.log(context.productToShow);
         return (
           <aside className={`${context.isPDOpen? 'flex flex-col' : 'hidden'} fixed right-0 z-40 w-1/3 p-1 text-white shadow-md h-[calc(100vh-80px)] rounded-l-3xl bg-black/90 top-20`}>
@@ -28,7 +34,7 @@ const ProductDetail = ()=> {
               <p className="mb-20">
               <span>${context.productToShow.description} </span>
               </p>
-              <button onClick={()=> context.setCount(context.count +1)} className="absolute w-3/4 bg-blue-500 rounded-lg h-14 bottom-10 ">
+              <button onClick={()=> addProductsToCart()} className="absolute w-3/4 bg-blue-500 rounded-lg h-14 bottom-10 ">
                Add to cart
               </button>
             </div>
