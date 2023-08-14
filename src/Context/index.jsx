@@ -4,27 +4,33 @@ import PropTypes from 'prop-types';
 
 export const ShoppingCartContext = createContext()
 
-export const ShoppingCartProvider = ({children})=>{
-    // Shopping Cart ~ Add items
-    const [count, setCount] = useState(0)
 
-    // Product Detail ~ Open/Close
+export const ShoppingCartProvider = ({children})=>{
+    const [count, setCount] = useState(0)
     const [isPDOpen, setIsPDOpen] = useState(false)
     const openPD = () => setIsPDOpen(true)
     const closePD = () => setIsPDOpen(false)
+    const [productToShow, setProductToShow] = useState({
+        title: "",
+        price: "",
+        description: "",
+        images: [],
+      });
+    const [cartProducts, setCartProducts] = useState({})
 
-    // Product Detail ~ Show Product
-    const [productToShow, setProductToShow] = useState({})
 
     return (
+        
         <ShoppingCartContext.Provider value={{
             count,
             setCount,
             openPD,
             closePD,
             isPDOpen,
-            productToShow, 
-            setProductToShow
+            productToShow,
+            setProductToShow,
+            cartProducts, 
+            setCartProducts
         }}>
             {children}
         </ShoppingCartContext.Provider>
